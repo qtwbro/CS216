@@ -33,6 +33,6 @@ public class Student {
     public static void main(String[] agrs){
         Student student1  = new Student();
         student1.setInfo("Timothy", "Boyd", 3.1, 3.5, 4);
-        System.err.println(student1.first_name);
+        System.err.println(student1.last_name);
     }
 }
