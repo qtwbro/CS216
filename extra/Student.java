@@ -9,12 +9,10 @@ public class Student {
     private float grade2;
     private float grade3;
 
-    private int num_score;
     private float[] scores;
 
     public Student(String name, int num_score) {
         this.first_name = name;
-        this.num_score = num_score;
         this.scores = new float[num_score];
 
         student_id = generateID();
@@ -40,15 +38,15 @@ public class Student {
 
     public float getAvg(){
         float total = 0;
-        for (int i = 0; i < this.num_score; i++) {
+        for (int i = 0; i < this.scores.length; i++) {
             total += this.scores[i];
         }
-        return total/this.num_score;
+        return (float)total/this.scores.length;
     }
 
     public float highestScore(){
         float total = 0;
-        for (int i = 0; i < this.num_score; i++) {
+        for (int i = 0; i < this.scores.length; i++) {
             if (total < this.scores[i]) {
                 total = this.scores[i];
             }
@@ -58,7 +56,7 @@ public class Student {
 
     public float lowestScore(){
         float total = 100;
-        for (int i = 0; i < this.num_score; i++) {
+        for (int i = 0; i < this.scores.length; i++) {
             if (total > this.scores[i]) {
                 total = this.scores[i];
             }
@@ -69,6 +67,7 @@ public class Student {
     public boolean pass_fail() {
         return this.getAvg() > 60;
     }
+
 
     public static void main(String[] agrs){
         Scanner input = new Scanner(System.in);
