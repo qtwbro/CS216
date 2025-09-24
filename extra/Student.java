@@ -88,6 +88,7 @@ public class Student {
         }
         
         System.out.println("Highest Grade: " + student1.highestScore() + " \n Lowest Grade: " + student1.lowestScore() + "\n Average Grade: " + student1.getAvg() + " \n Pass/Fail: " + student1.pass_fail());
+        input.close();
     }
 }
 
