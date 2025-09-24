@@ -1,40 +1,32 @@
 
+import java.util.ArrayList;
+import java.util.Collections;
 public class _student {
     public String name;
     public float[] scores;
+    public ArrayList<Float> scores_d;
+    
 
 
     public _student(String name, int num_scores) {
         this.name = name;
-        this.scores = new float[num_scores];
+        this.scores_d = new ArrayList<>();
     }
 
     public float getAvg() {
         float total = 0;
-        for (int i = 0; i < this.scores.length; i++) {
-            total += this.scores[i];
+        for (float s : scores_d) {
+            total += s;
         }
-        return (float)total/this.scores.length;
+        return (float)total/this.scores_d.size();
     }
 
     public float highest() {
-        float end = 0;
-        for (int i = 0; i < this.scores.length; i++) {
-            if (this.scores[i] > end) {
-                end = this.scores[i];
-            }
-        }
-        return (float)end;
+        return Collections.max(this.scores_d);
     }
 
     public float lowest() {
-        float end = 100;
-        for (int i = 0; i < this.scores.length; i++) {
-            if (this.scores[i] < end) {
-                end = this.scores[i];
-            }
-        }
-        return (float)end;
+        return Collections.min(this.scores_d);
     }
 
     public boolean verdict() {
@@ -43,6 +35,12 @@ public class _student {
 
     public void PrintReport() {
         System.out.printf("Student: " + this.name);
+        System.out.printf("\n Scores: ");
+        
+        for (float i : scores_d) {
+            System.out.printf("\n %s ", i);
+        }
+
         System.out.printf("\n Highest: " + this.highest());
         System.out.printf("\n Lowest: " + this.lowest());
         System.out.printf("\n Average: " + this.getAvg());
