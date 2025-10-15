@@ -1,7 +1,9 @@
 
 import java.util.ArrayList;
 import java.util.Collections;
-public class _student {
+
+public class _student{
+    
     public String name;
     public float[] scores;
     public ArrayList<Float> scores_d;
@@ -32,6 +34,7 @@ public class _student {
     public boolean verdict() {
         return (this.getAvg() >= 60);
     }
+
 
     public void PrintReport() {
         System.out.printf("Student: " + this.name);

@@ -11,11 +11,19 @@ public class Student {
 
     private float[] scores;
 
-    public Student(String name, int num_score) {
-        this.first_name = name;
-        this.scores = new float[num_score];
+    public String name;
+    public float gpa;
 
-        student_id = generateID();
+    // public Student(float gpa, String name) {
+    //     this.first_name = gpa;
+    //     this.scores = new float[name];
+
+    //     student_id = generateID();
+    // }
+
+    public Student(float gpa, String name) {
+        this.gpa = gpa;
+        this.name = name;
     }
 
     private static String generateID() {
@@ -33,7 +41,7 @@ public class Student {
     }
 
     public float getGPA() {
-        return (grade1 + grade2 + grade3)/3;
+        return this.gpa;
     }
 
     public float getAvg(){
@@ -89,5 +97,10 @@ public class Student {
         System.out.println("Highest Grade: " + student1.highestScore() + " \n Lowest Grade: " + student1.lowestScore() + "\n Average Grade: " + student1.getAvg() + " \n Pass/Fail: " + student1.pass_fail());
         input.close();
     }
+
+@Override /** Return a string representation of a Rectangle object */
+  public String toString() {
+    return super.toString() + " Name: " + name + " gpa: " + gpa;
+  }
 }
 
