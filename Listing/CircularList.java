@@ -1,6 +1,7 @@
 package Listing;
 
 import java.util.ArrayList;
+import java.util.Set;
 
 public class CircularList {
 
@@ -43,9 +44,9 @@ public class CircularList {
         
     }
 
-    public void countNodes() {
+    public int countNodes() {
         int n_nodes = 0;
-        ArrayList<Node> seen = null;
+        Set<Node> seen = null;
 
         Node current = head.next;
         while(current != head) {
@@ -53,12 +54,21 @@ public class CircularList {
                 Node start = current;
                 while (true) {
                     n_nodes++;
-                    
+                    current = current.next;
+                    if (current == start) {
+                        break;
+                    }
+                    return System.out.printf("There are %d Nodes", n_nodes);;
+
                 }
             }
 
+            seen.add(current);
+            current = current.next;
+
         }
-        System.out.printf("There are %d Nodes", n_nodes);
+        
+        return n_nodes;
     }
     // Display list forward
 
