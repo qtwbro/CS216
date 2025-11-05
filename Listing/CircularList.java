@@ -1,6 +1,8 @@
 package Listing;
 
+import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 public class CircularList {
@@ -44,21 +46,19 @@ public class CircularList {
         
     }
 
-    public int countNodes() {
-        int n_nodes = 0;
-        Set<Node> seen = null;
+    public PrintStream countNodes() {
+        Set<Node> seen = new HashSet<>();
 
-        Node current = head.next;
-        while(current != head) {
+        Node current = head;
+        while(current != null) {
             if (seen.contains(current)) {
                 Node start = current;
                 while (true) {
-                    n_nodes++;
                     current = current.next;
                     if (current == start) {
                         break;
                     }
-                    return System.out.printf("There are %d Nodes", n_nodes);;
+                    return System.out.printf("There are %d Nodes%n", seen.size());
 
                 }
             }
@@ -68,7 +68,7 @@ public class CircularList {
 
         }
         
-        return n_nodes;
+        return System.out.printf("There are %d Nodes%n", seen.size());
     }
     // Display list forward
 

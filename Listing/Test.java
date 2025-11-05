@@ -9,16 +9,18 @@ public class Test {
         list.insert(30);
         list.insert(40);
 
-        list.displayForward();
-        list.displayBackward();
-
         list.countNodes();
+        list.displayForward();
+        
 
         list.delete(20);
 
+        list.countNodes();
+        list.displayForward();
+
         list.insertBegining(0);
 
+        list.countNodes();
         list.displayForward();
-        list.displayBackward();
     }
 }
