@@ -1,8 +1,9 @@
-package graph;
+package Graph;
+
 import java.util.*;
 
-class DFS {
-    static void dfs(int node, boolean[] visited,
+public class DFS {
+    public static void dfs(int node, boolean[] visited,
         ArrayList<ArrayList<Integer>> adj) {
         visited[node] = true;
         System.out.print(node + " ");

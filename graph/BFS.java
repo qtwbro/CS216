@@ -1,10 +1,9 @@
-package graph;
 
-
+package Graph;
 import java.util.*;
 public class BFS {
 
-    static void bfs(int start, ArrayList<ArrayList<Integer>> adj, int n) {
+    public static void bfs(int start, ArrayList<ArrayList<Integer>> adj, int n) {
         boolean[] visited = new boolean[n];
         Queue<Integer> q = new LinkedList<>();
         visited[start] = true;
